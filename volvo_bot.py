@@ -5,10 +5,10 @@ from binance.client import Client
 from binance.enums import *
 import asyncio
 
-# API
+# Telegram ва Binance API
 TELEGRAM_TOKEN = "7300093292:AAFn0XkEppHk9I__y5MN9Vvz4ZtBrPJbf9Y"
-BINANCE_API_KEY = "l5Dg6lUTdxuDLPottXxZxCkF2Et2lgzAQT1JrfmUZN3PwTVZhmcFdrvVyAugDoTO"
-BINANCE_API_SECRET = "ypcUtklgDnITB13XE09PRTrMUEPkcCiz2QKxsKs1WAy3B5rNw8zg0XffHTBMpvdR"
+BINANCE_API_KEY = "rwgn9tWQhrPkeWYEUhmzWEVO0Yt1cMQnAQgGSFwc7y8RtyHlywbBCzMyoJJmqc6H"
+BINANCE_API_SECRET = "jnazgXkFe0nEHMZcHPyDJh2f2FMjni84nGX1wetO2ntoCGBIyBj83eGgTbUsizgN"
 
 client = Client(BINANCE_API_KEY, BINANCE_API_SECRET)
 
@@ -72,7 +72,6 @@ async def short_order(update: Update, context: ContextTypes.DEFAULT_TYPE):
     except Exception as e:
         await update.message.reply_text(f"❌ Хатолик: {str(e)}")
 
-# Bot setup
 app = ApplicationBuilder().token(TELEGRAM_TOKEN).build()
 app.add_handler(CommandHandler("start", start))
 app.add_handler(CommandHandler("status", status))
